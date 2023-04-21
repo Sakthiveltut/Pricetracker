@@ -79,22 +79,14 @@ WSGI_APPLICATION = 'frontend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pricetracker',
-        'HOST':'localhost',
-        'USER':'Sakthi',
-        'PASSWORD':'Sakthi',
-        'PORT':'3306'
+        'NAME': 'railway',
+        'HOST':'containers-us-west-195.railway.app',
+        'USER':'root',
+        'PASSWORD':'FLwovbvIvw0cG73AD3ja',
+        'PORT':'7185'
     }
 }
 
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 
