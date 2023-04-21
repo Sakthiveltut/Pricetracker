@@ -89,14 +89,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://price-tracker.up.railway.app/'
-],
-ALLOWED_HOSTS = [
-    'https://price-tracker.up.railway.app/',
-],
-CORS_ORIGIN_WHITELIST = [
-    'https://price-tracker.up.railway.app/',
 ]
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
