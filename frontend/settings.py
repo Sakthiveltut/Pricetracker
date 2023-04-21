@@ -87,7 +87,15 @@ DATABASES = {
     }
 }
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://price-tracker.up.railway.app/'
+],
+ALLOWED_HOSTS = [
+    'https://price-tracker.up.railway.app/',
+],
+CORS_ORIGIN_WHITELIST = [
+    'https://price-tracker.up.railway.app/',
+]
 
 
 # Password validation
