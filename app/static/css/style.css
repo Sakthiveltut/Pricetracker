@@ -1,9 +1,7 @@
 html {
   font-size: 14px;
-}
-body {
-  font-family: Arial, sans-serif;
-
+  text-decoration: none;
+  font-family: 'Times New Roman', serif;
 }
 a {
   text-decoration: none;
