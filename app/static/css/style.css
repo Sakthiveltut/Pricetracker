@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Slab&display=swap');
 
 * {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 html {
