@@ -53,9 +53,14 @@ MIDDLEWARE = [
 
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://price-tracker.up.railway.app"
+],
+ALLOWED_HOSTS = [
+    'containers-us-west-195.railway.app',
+],
 CORS_ORIGIN_WHITELIST = [
     "https://price-tracker.up.railway.app",
-
 ]
 
 ROOT_URLCONF = 'frontend.urls'
