@@ -59,18 +59,6 @@ Price Tracker | Online Shopping
             </li>
             {% endif %}
         
-            {% if products.number > 5 %}
-            <li class="page-item">
-              <a class="page-link" href="?page=1">1</a>
-            </li>
-            {% endif %}
-        
-            {% if products.number > 6 %}
-            <li class="page-item disabled">
-              <span class="page-link">...</span>
-            </li>
-            {% endif %}
-        
             {% for num in products.paginator.page_range %}
               {% if num > products.number|add:'-3' and num < products.number|add:'3' %}
                 {% if products.number == num %}
@@ -84,18 +72,6 @@ Price Tracker | Online Shopping
                 {% endif %}
               {% endif %}
             {% endfor %}
-        
-            {% if products.number < products.paginator.num_pages|add:'-5' %}
-            <li class="page-item disabled">
-              <span class="page-link">...</span>
-            </li>
-            {% endif %}
-        
-            {% if products.number < products.paginator.num_pages|add:'-4' %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ products.paginator.num_pages }}">{{ products.paginator.num_pages }}</a>
-            </li>
-            {% endif %}
         
             {% if products.has_next %}
             <li class="page-item">
