@@ -42,7 +42,7 @@ Price Tracker | Online Shopping
         {% endfor %}
 
 
-        <nav>
+        <nav >
           <ul class="pagination justify-content-center">
             {% if products.has_previous %}
             <li class="page-item">
@@ -54,17 +54,39 @@ Price Tracker | Online Shopping
             </li>
             {% endif %}
         
+            {% if products.number > 3 %}
+              <li class="page-item">
+                <a class="page-link" href="?page=1">1</a>
+              </li>
+              {% if products.number > 4 %}
+              <li class="page-item disabled">
+                <span class="page-link">...</span>
+              </li>
+              {% endif %}
+            {% endif %}
+        
             {% for num in products.paginator.page_range %}
-              {% if products.number == num %}
+              {% if num == products.number %}
                 <li class="page-item active" aria-current="page">
                   <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
                 </li>
-              {% elif num > products.number|add:'-4' and num < products.number|add:'2' %}
+              {% elif num > products.number|add:'-3' and num < products.number|add:'2' %}
                 <li class="page-item">
                   <a class="page-link" href="?page={{ num }}">{{ num }}</a>
                 </li>
               {% endif %}
             {% endfor %}
+        
+            {% if products.number < products.paginator.num_pages-2 %}
+              {% if products.number < products.paginator.num_pages-3 %}
+              <li class="page-item disabled">
+                <span class="page-link">...</span>
+              </li>
+              {% endif %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ products.paginator.num_pages }}">{{ products.paginator.num_pages }}</a>
+              </li>
+            {% endif %}
         
             {% if products.has_next %}
             <li class="page-item">
@@ -77,6 +99,7 @@ Price Tracker | Online Shopping
             {% endif %}
           </ul>
         </nav>
+        
         
         
         
