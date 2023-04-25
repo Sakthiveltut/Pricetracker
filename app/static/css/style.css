@@ -21,6 +21,12 @@ a {
   height: 60vh;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .pagination {
+    width: 100%;
+  }
+}
+
 
 
 
