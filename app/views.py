@@ -45,6 +45,7 @@ def search_product(request):
                 combined = FProducts.objects.filter(category__name=value).union(AProducts.objects.filter(category__name=value))
                 return render(request,"app/search_product.html",{"products":combined})
             
+        combined = FProducts.objects.all().union(AProducts.objects.all())
 
 
 def notification(request):
