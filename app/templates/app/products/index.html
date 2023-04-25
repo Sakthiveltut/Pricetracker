@@ -46,11 +46,11 @@ Price Tracker | Online Shopping
           <ul class="pagination justify-content-center">
             {% if products.has_previous %}
             <li class="page-item">
-              <a class="page-link" href="?page={{ products.previous_page_number }}" tabindex="-1"><i class="fa fa-sharp fa-solid fa-chevrons-left"></i></a>
+              <a class="page-link" href="?page={{ products.previous_page_number }}" tabindex="-1">&laquo;</a>
             </li>
             {% else %}
             <li class="page-item disabled">
-              <span class="page-link"><i class="fa fa-sharp fa-solid fa-chevrons-left"></i></span>
+              <span class="page-link">&laquo;</span>
             </li>
             {% endif %}
         
@@ -68,11 +68,11 @@ Price Tracker | Online Shopping
         
             {% if products.has_next %}
             <li class="page-item">
-              <a class="page-link" href="?page={{ products.next_page_number }}"><i class="fa fa-sharp fa-solid fa-chevrons-right"></i></a>
+              <a class="page-link" href="?page={{ products.next_page_number }}">&raquo;</a>
             </li>
             {% else %}
             <li class="page-item disabled">
-              <span class="page-link"><i class=" fa fa-sharp fa-solid fa-chevrons-right"></i></span>
+              <span class="page-link">&raquo;</span>
             </li>
             {% endif %}
           </ul>
