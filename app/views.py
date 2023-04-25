@@ -21,8 +21,9 @@ def collectionsview(request,name):
     paginator = Paginator(combined, 40)
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
-    return render(request,"app/products/index.html",{"products":products,"category_name":name})
-  
+    return render(request, 'app/products/index.html', {'products': products,"category_name":name})
+
+    
 def product_details(request,cname,pname):
     Fproducts=FProducts.objects.filter(category__name=cname,name=pname).first()
     Aproducts=AProducts.objects.filter(category__name=cname,name=pname).first()
