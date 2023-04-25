@@ -34,8 +34,9 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 ms-auto" style="display:flex;">
-        <input style="margin-right: 2px;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+      <form class="form-inline my-2 my-lg-0 ms-auto" style="display:flex;" method="POST" action="{% url 'search_product' %}">
+        {%csrf_token %}
+        <input style="margin-right: 2px;" class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 
 
 context={}
+search_list=[]
 
 def home(request):
     combined = FProducts.objects.filter(trending=1).union(AProducts.objects.filter(trending=1))
@@ -32,6 +33,19 @@ def product_details(request,cname,pname):
     elif Aproducts:
         products=Aproducts
     return render(request,"app/products/product_details.html",{"products":products})
+
+def search_product(request):
+    if request.method == 'POST':
+        search_value = request.POST.get('search')
+
+        categories=Category.objects.all()
+        values = [category.name for category in categories]
+        for value in values:
+            if(search_value==value or value.lower() or value+"s" or value.replace(" ","")):
+                combined = FProducts.objects.filter(category__name=value).union(AProducts.objects.filter(category__name=value))
+                return render(request,"app/search_product.html",{"products":combined})
+            
+
 
 def notification(request):
     return render(request,"app/notification.html",context)
