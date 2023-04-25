@@ -32,58 +32,7 @@ Price Tracker | Online Shopping
             </div>
           </a>
         </div>
-        {% endfor %}
-
-
-        <nav>
-          <ul class="pagination justify-content-center">
-        
-            {% if products.has_previous %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-              <span class="page-link" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </span>
-            </li>
-            {% endif %}
-        
-            {% for num in products.paginator.page_range %}
-              {% if num > products.number|add:'-3' and num < products.number|add:'3' %}
-                {% if products.number == num %}
-                <li class="page-item active">
-                  <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
-                </li>
-                {% else %}
-                <li class="page-item">
-                  <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-                </li>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-        
-            {% if products.has_next %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-              <span class="page-link" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </span>
-            </li>
-            {% endif %}
-        
-          </ul>
-        </nav>
-        
-
+    {% endfor %}
     </div>
   </div>
 </section>

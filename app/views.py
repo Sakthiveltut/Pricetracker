@@ -37,12 +37,12 @@ def product_details(request,cname,pname):
 def search_product(request):
     if request.method == 'POST':
         search_value = request.POST.get('search')
-        categories=Category.objects.all()
-        values = [category.name for category in categories]
-        for value in values:
-            if(search_value==value or value.lower() or value+"s" or value.replace(" ","")):
-                combined = FProducts.objects.filter(category__name=value).union(AProducts.objects.filter(category__name=value))
-                return render(request,"app/search_product.html",{"products":combined})
+        # categories=Category.objects.all()
+        # values = [category.name for category in categories]
+        # for value in values:
+        #     if(search_value==value or value.lower() or value+"s" or value.replace(" ","")):
+        combined = FProducts.objects.filter(category__name=search_value).union(AProducts.objects.filter(category__name=search_value))
+        return render(request,"app/search_product.html",{"products":combined})
 
 
 
