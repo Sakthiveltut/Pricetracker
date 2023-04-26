@@ -24,10 +24,10 @@ ShopKart | Online Shopping
           <div class="col-md-6">
             <img src="{{ products.image_link }}" alt="{{ products }}" class="img-fluid">
           </div>
-          <div class="col-md-6">
-            <h3 class="text-success">{{products | upper}}</h3>
+          <div class="col-md-6 my-3">
+            <h3 >{{products | upper}}</h3>
             <h5>Offer  :  {{products.offer}}</h5>
-            <h5 class="my-2 text-primary">Price : {{products.price|last}}</h5>
+            <h5 class="my-2">Price : {{products.price|last}}</h5>
             <a href="{{products.url}}" class="btn btn-outline-primary" target="_blank">BUY</a>
           </div>
         </div>
