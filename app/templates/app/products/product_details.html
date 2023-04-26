@@ -12,8 +12,8 @@ ShopKart | Online Shopping
           <hr style="border-color:#b8bfc2;">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'collections' products.category.name %}">Collections</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"  style="text-decoration: none;">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'collections' products.category.name %}"  style="text-decoration: none;">Collections</a></li>
               <li class="breadcrumb-item active" aria-current="page">Product</li>
             </ol>
           </nav>
@@ -22,7 +22,7 @@ ShopKart | Online Shopping
       <div class="container mt-5">
         <div class="row">
           <div class="col-md-6">
-            <img src="{{ products.image_link }}" alt="{{ products }}" class="img-fluid" style="width:200px;height:280px">
+            <img src="{{ products.image_link }}" alt="{{ products }}" class="img-fluid">
           </div>
           <div class="col-md-6 my-3">
             <h3 >{{products | upper}}</h3>
