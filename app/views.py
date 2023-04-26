@@ -45,14 +45,8 @@ def search_product(request):
                 combined = FProducts.objects.filter(category__name=value).union(AProducts.objects.filter(category__name=value))
                 return render(request,"app/search_product.html",{"products":combined})
             
-        combined = FProducts.objects.filter().union(AProducts.objects.filter())
-        values = [product.name for product in combined]
-        print("length of value",len(values))
-        for value in values:
-            if result in value:
-                combined = FProducts.objects.filter(name=value).union(AProducts.objects.filter(name=value))
-                return render(request,"app/search_product.html",{"products":combined})
-
+        combined = FProducts.objects.filter(name__icontains=result).union(AProducts.objects.filter(name__icontains=result))
+        return render(request,"app/search_product.html",{"products":combined})
     return redirect("home")
         
 
