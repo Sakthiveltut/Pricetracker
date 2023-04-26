@@ -37,21 +37,21 @@ def product_details(request,cname,pname):
 def search_product(request):
     if request.method == 'POST':
         search_value = request.POST.get('search')
+        result = str(search_value).strip()
         categories=Category.objects.all()
         values = [category.name for category in categories]
         for value in values:
-            print(search_value, value.lower(),value[:len(value)-1],value[:len(value)-1].lower(),value.replace(" ",""))
-            if(search_value==value or search_value==value.lower() or search_value==value[:len(value)-1] or search_value==value[:len(value)-1].lower() or search_value==value.replace(" ","")):
+            if(result==value or result==value.lower() or result==value[:len(value)-1] or result==value[:len(value)-1].lower() or result==value.replace(" ","")):
                 combined = FProducts.objects.filter(category__name=value).union(AProducts.objects.filter(category__name=value))
                 return render(request,"app/search_product.html",{"products":combined})
             
-        # combined = FProducts.objects.filter().union(AProducts.objects.filter())
-        # values = [product.name for product in combined]
-        # print("length of value",len(values))
-        # for value in values:
-        #     if search_value in value:
-        #         combined = FProducts.objects.filter(name=value).union(AProducts.objects.filter(name=value))
-        #         return render(request,"app/search_product.html",{"products":combined})
+        combined = FProducts.objects.filter().union(AProducts.objects.filter())
+        values = [product.name for product in combined]
+        print("length of value",len(values))
+        for value in values:
+            if result in value:
+                combined = FProducts.objects.filter(name=value).union(AProducts.objects.filter(name=value))
+                return render(request,"app/search_product.html",{"products":combined})
 
     return redirect("home")
         
