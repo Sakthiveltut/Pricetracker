@@ -22,7 +22,7 @@ def collectionsview(request,name):
     paginator = Paginator(combined, 40)
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
-    return render(request, 'app/products/index.html', {'products': products,"category_name":name})
+    return render(request, 'app/products/index.html', {'products': products,})
 
     
 def product_details(request,cname,pname):
