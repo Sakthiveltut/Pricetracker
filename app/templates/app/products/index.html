@@ -9,13 +9,13 @@ Price Tracker | Online Shopping
   <div class="container">
     <div class="row">
         <div class="col-12">
-          <h4 class="mb-3" style="margin-top: 30px;">{{product.category.name}} Products</h4>
+          <h4 class="mb-3" style="margin-top: 30px;">{{category_name}} Products</h4>
           <hr style="border-color:#b8bfc2;">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{% url 'home' %}" style="text-decoration: none;">Home</a></li>
               <li class="breadcrumb-item"><a href="{% url 'collections' %}" style="text-decoration: none;">Collections</a></li>
-              <li class="breadcrumb-item active">{{product.category.name}} Collections</li>
+              <li class="breadcrumb-item active">{{category_name}}</li>
             </ol>
           </nav>
         </div>
