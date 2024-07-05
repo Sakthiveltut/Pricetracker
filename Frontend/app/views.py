@@ -54,3 +54,6 @@ def search_product(request):
 
 def notification(request):
     return render(request,"app/notification.html",context)
+
+
+

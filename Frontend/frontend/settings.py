@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'frontend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'HOST':'containers-us-west-195.railway.app',
-        'USER':'root',
-        'PASSWORD':'FLwovbvIvw0cG73AD3ja',
-        'PORT':'7185'
+        'NAME': 'bok',
+        'HOST':'localhost',
+        'USER':'Sakthi',
+        'PASSWORD':'Sakthi',
+        'PORT':'3306'
     }
 }
 
